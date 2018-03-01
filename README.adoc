@@ -167,7 +167,7 @@ include::finish/src/main/java/io/openliberty/guides/inventory/InventoryResource.
 ----
 
 The if statement in this class now returns an error message when the inventory service is down for maintanence 
-and calls the `get()` method in the InventoryManager.java class when the inventory service is up and running 
+and calls the `get()` method in the `InventoryManager.java` class when the inventory service is up and running 
 as normal.
 All references to the email configuration property have been removed from this file.
 
@@ -211,12 +211,12 @@ Change the value back to true to see the cached version of the properties.
 
 == Testing the application
 
-Create a start/src/test/java/it/io/openliberty/guides/faulttolerance/FaultToleranceTest.java file and add 
+Create a `start/src/test/java/it/io/openliberty/guides/faulttolerance/FaultToleranceTest.java` file and add 
 the following code:
 
 link:finish/src/test/java/it/io/openliberty/guides/faulttolerance/FaultToleranceTest.java[]
 
-The testFallbackForGet() test case checks the HTTP response of the inventory service and then checks to see that 
+The `testFallbackForGet()` test case checks the HTTP response of the inventory service and then checks to see that 
 the system properties for a hostname is returned when inventory service is available. It then ensures that the 
 system service is down in order to check that when service is down, the system properties is returned from the 
 inventory service.
@@ -225,8 +225,8 @@ Asserting if the total number of the system properties, when service is up, is g
 of the system properties when service is down. This is because only two properties should be returned when the 
 Fallback method is called instead of all of the system properties. 
 
-The next test case, testRetryGettingSystemProperties(), checks to see if the retry is being called the same number 
-of times as stated by the max retries in the @retry annotation. If the count from the retry method is equal to the 
+The next test case, `testRetryGettingSystemProperties()`, checks to see if the retry is being called the same number 
+of times as stated by the max retries in the `@Retry` annotation. If the count from the retry method is equal to the 
 expected number of times for the retry being called, then the service returns a valid response. Otherwise, the 
 service returns the following message: ERROR: Server is currently in maintenance. 
 
@@ -234,7 +234,7 @@ https://raw.githubusercontent.com/OpenLiberty/guides-common/master/mvnverify.ado
 
 To see whether the tests detect a failure, remove the reset retries method of 
 the `FaultToleranceTest.java` file. Re-run the Maven build. You will see a test failure occur for the 
-testRetryGettingSystemProperties() test case.
+`testRetryGettingSystemProperties()` test case.
 
 
 -------------------------------------------------------
