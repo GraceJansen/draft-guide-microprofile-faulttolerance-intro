@@ -14,7 +14,7 @@
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
 :source-highlighter: prettify
-= Handling failures with Fault Tolerance
+= Building fault tolerant microservices with the @Retry annotation
 
 Learn how to use the MicroProfile Fault Tolerance specification to enable applications to function 
 even when one of the microservices is unavailable.
